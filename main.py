@@ -27,6 +27,7 @@ def home():
     return render_template("index.html")
 
 
+#Form - Adding the cafe
 @app.route('/add',methods=["GET","POST"])
 def add_cafe():
     form = CafeForm()
@@ -43,6 +44,7 @@ def add_cafe():
     return render_template('add.html', form=form)
 
 
+#Table for cafes
 @app.route('/cafes')
 def cafes():
     with open('cafe-data.csv', newline='',encoding='utf8') as csv_file:
